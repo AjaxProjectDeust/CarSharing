@@ -21,8 +21,6 @@ Autoloader::register();
 // }
 
 // Creation of data :
-$listOfCars = [];
-
 
 // function displayObjects($nbOfObject, $list, $class) {
 
@@ -77,6 +75,9 @@ $user2 = new User("Steichen", "Almeric", "almeric.steichen@etu.unilim.fr", "08/0
 
 // var_dump($listOfUsers[0]);
 
-// for ($i = 0; $i < count($listOfUsers); $i++ ) {
-//     echo $listOfUsers[$i]->getAttributes();
-// }
+for ($i = 0; $i < count(User::$listOfUsers); $i++ ) {
+    // echo $listOfUsers[$i]->getAttributes();
+    // User::$listOfUsers[$i]->getAttributes();
+
+    echo User::$listOfUsers[$i]->getFirstName();
+}

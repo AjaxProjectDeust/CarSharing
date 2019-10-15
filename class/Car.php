@@ -2,6 +2,8 @@
 
 class Car
 {
+    public static $listOfCars = [];
+
     private $mark;
     private $model;
     private $color;

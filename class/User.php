@@ -23,12 +23,13 @@ class User
             $this->listOfCars = $listOfCars;
             $this->listOfComments = $listOfComments;
             
-            var_dump(self::$listOfUsers);
-            self->listOfUsers = array_push(self::$listOfUsers, $this);
+            array_push(self::$listOfUsers, $this);
+            // var_dump(self::$listOfUsers);
     }
 
     /**
      * Retourne un tableau de tous les attributs de l'objet
+     * @return array
      */
     public function getAttributes() {
         return get_object_vars($this);
