@@ -1,6 +1,7 @@
 <?php 
 
-class AnnouncementComment 
+class AnnouncementComment extends Comments
 {
-
+    private $associatedAnnouncement;
+    
 }

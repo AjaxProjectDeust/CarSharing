@@ -1,6 +1,7 @@
 <?php
 
-class UserComment 
+class UserComment extends Comments
 {
-
+    private $associatedUser;
+    
 }

@@ -22,18 +22,18 @@ Autoloader::register();
 
 // Creation of data :
 $listOfCars = [];
-$listOfUsers = [];
 
-function displayObjects($nbOfObject, $list, $class) {
 
-    for($i = 0; $i < $nbOfObject - 1; $i++) {
-        $currentObject = $i + 1; // démarre à 1
+// function displayObjects($nbOfObject, $list, $class) {
+
+//     for($i = 0; $i < $nbOfObject - 1; $i++) {
+//         $currentObject = $i + 1; // démarre à 1
         
-        $obj[$currentObject] = new $class();
-        array_push($list, $obj[$currentObject]);
-    }
-    return $list; // the list used
-}
+//         $obj[$currentObject] = new $class();
+//         array_push($list, $obj[$currentObject]);
+//     }
+//     return $list; // the list used
+// }
 
 // Create x number of class
 // $listOfCars = displayObjects(4, $listOfCars, "Car");
@@ -47,12 +47,13 @@ function displayObjects($nbOfObject, $list, $class) {
 // $listOfCars = [$car1, $car2, $car3, $car4, $car5];
 
 $user1 = new User("Tony", "Bengué", "tonybengue@hotmail.fr", "02/12/1993", null, null, null);
-$user2 = new User();
-$user3 = new User();
-$user4 = new User();
-$user5 = new User();
-$listOfUsers = [$user1, $user2, $user3, $user4, $user5];
+$user2 = new User("Steichen", "Almeric", "almeric.steichen@etu.unilim.fr", "08/08/1999", null, null, null);
+// $user3 = new User();
+// $user4 = new User();
+// $user5 = new User();
 
+
+// $listOfUsers = [$user1, $user2, $user3, $user4, $user5];
 // Displaying the data :
 // foreach ($listOfCars as $car) {
 //     echo 'This is a car <br>';
@@ -62,12 +63,20 @@ $listOfUsers = [$user1, $user2, $user3, $user4, $user5];
 //     echo 'This is an user <br>';
 // }
 
-// echo $user1->getFirstName();
-echo $user1->firstName;
-echo $user1->firstName = "Bite";
-echo $user1->lastName;
-echo $user1->email;
-echo $user1->birthDate;
-echo $user1->rate;
-echo $user1->listOfCars;
-echo $user1->listOfComments;
+// echo $user1->getFirstname();
+// echo $user1->getLastname();
+// echo $user1->getEmail();
+// echo $user1->getBirthDate();
+// echo $user1->getRate();
+// echo $user1->getListOfCars();
+// echo $user1->getListOfComments();
+// echo $user2->getAttributes();
+
+// $listOfUsers[] = $user1;
+// $listOfUsers[] = $user2;
+
+// var_dump($listOfUsers[0]);
+
+// for ($i = 0; $i < count($listOfUsers); $i++ ) {
+//     echo $listOfUsers[$i]->getAttributes();
+// }
