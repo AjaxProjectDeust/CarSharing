@@ -14,7 +14,7 @@ class User
 
     public function __construct($firstName = "Pas définit", $lastName = "Pas définit", $email = "Pas définit", 
         $birthDate = "Pas définit", $rate = "Aucune note", $listOfCars = "Pas de voiture", $listOfComments = "Pas de commentaire") {
-
+            
             $this->firstName = $firstName;
             $this->lastName = $lastName;
             $this->email = $email;
@@ -24,7 +24,8 @@ class User
             $this->listOfComments = $listOfComments;
             
             array_push(self::$listOfUsers, $this);
-            // var_dump(self::$listOfUsers);
+            var_dump(self::$listOfUsers); 
+            // var_dump($this); 
     }
 
     /**
@@ -38,11 +39,10 @@ class User
     /**
      * Affiche le tableau des
      */
-    public static function showUserForm() {
+    public static function showUserTable() {
         echo "<table id='users'>
         <tr>
-          <th>Nom</th>
-          <th>Prénom</th>
+          <th>Utilisateur</th>
           <th>Mail</th>
           <th>Date de naissance</th>
           <th>Notes</th>
@@ -50,11 +50,9 @@ class User
         for ($i = 0; $i < count(User::$listOfUsers); $i++ ) {
             echo "<tr>";
                 echo "<td>";
-                    echo User::$listOfUsers[$i]->getFirstName();
+                    $iLink = $i + 1;
+                    echo "<a href='users.php?user=$i'>" . User::$listOfUsers[$i]->getFirstName() . " " . User::$listOfUsers[$i]->getLastName() ."</a>";
                     // echo User::$listOfUsers[$i]->getAttributes()["firstName"];
-                echo "</td>";
-                echo "<td>";
-                    echo User::$listOfUsers[$i]->getLastName();
                 echo "</td>";
                 echo "<td>";
                     echo User::$listOfUsers[$i]->getEmail();

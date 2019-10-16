@@ -2,6 +2,8 @@
 
 class Announcement 
 {
+    public static $listOfAnnouncements = [];
+
     private $cityStart;
     private $cityEnd;
     private $dateStart;
@@ -30,38 +32,55 @@ class Announcement
         $this->commentsFromAnnouncement = $commentsFromAnnouncement;
         $this->commentsFromUsers = $commentsFromUsers;
 
-       // array_push(self::$listOfAnnoucement, $this);
+       array_push(self::$listOfAnnouncements, $this);
     }
 
-    public static function showUserForm() {
-        echo "<table id='users'>
+    public static function showAnnouncementTable() {
+        echo "<table id='announcement'>
         <tr>
-          <th>Départ</th>
-          <th>Arrivée</th>
+          <th>Ville Départ</th>
+          <th>Ville Arrivée</th>
           <th>Date de départ</th>
           <th>Date d'arrivée</th>
           <th>Nom du conducteur</th>
           <th>Nombre de sièges</th>
           <th>Prix</th>
-          <th>Voiture</th>
+          <th>Marque de la Voiture</th>
         </tr>";
-        for ($i = 0; $i < count(User::$listOfUsers); $i++ ) {
+        for ($i = 0; $i < count(Announcement::$listOfAnnouncements); $i++ ) {
             echo "<tr>";
                 echo "<td>";
-                    echo User::$listOfUsers[$i]->getFirstName();
-                    // echo User::$listOfUsers[$i]->getAttributes()["firstName"];
+                echo Announcement::$listOfAnnouncements[$i]->getCityStart();
+                // echo User::$listOfAnnouncements[$i]->getAttributes()["firstName"];
                 echo "</td>";
                 echo "<td>";
+                    echo Announcement::$listOfAnnouncements[$i]->getCityEnd();
+                echo "</td>";
+                echo "<td>";
+                    echo Announcement::$listOfAnnouncements[$i]->getDateStart();
+                echo "</td>";
+                echo "<td>";
+                    echo Announcement::$listOfAnnouncements[$i]->getDateEnd();
+                echo "</td>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getFirstName();
+                echo " ";
                     echo User::$listOfUsers[$i]->getLastName();
                 echo "</td>";
                 echo "<td>";
-                    echo User::$listOfUsers[$i]->getEmail();
+                    echo Announcement::$listOfAnnouncements[$i]->getSeatNumber();
                 echo "</td>";
                 echo "<td>";
-                    echo User::$listOfUsers[$i]->getBirthDate();
+                    echo Announcement::$listOfAnnouncements[$i]->getPrice();
                 echo "</td>";
                 echo "<td>";
-                    echo User::$listOfUsers[$i]->getRate();
+                    // TODO Recup' la marque de la voiture utilisé
+                    // echo Car::$listOfCars[$i]->getMark();
+                    echo Announcement::$listOfAnnouncements[$i]->getMark();
+                    
+                    // var_dump(Announcement::$listOfAnnouncements[$i]);
+                    //echo Car::$listOfCars[$i]->getMark();
+                    // echo Car::$car[$i]->getMark();
                 echo "</td>";
             echo "</tr>";
         }
@@ -211,7 +230,7 @@ class Announcement
     /**
      * Get the value of car
      */ 
-    public function getCar()
+    public function getMark()
     {
         return $this->car;
     }
@@ -221,7 +240,7 @@ class Announcement
      *
      * @return  self
      */ 
-    public function setCar($car)
+    public function setMark($car)
     {
         $this->car = $car;
 
