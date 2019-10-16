@@ -7,17 +7,20 @@ class Car
     private $mark;
     private $model;
     private $color;
-    private $numberOfPlace;
+    private $numberOfPlaces;
 
     /**
      * 
      */
-    private __construct($mark = "Not defined", $model = "Not Defined", $color = "Not Defined", $numberofPlace = "Not Defined") {
+    public function __construct($mark = "Pas définit", $model = "Pas définit", 
+        $color = "Pas définit", $numberOfPlaces = "Pas définit") {
 
         $this->mark = $mark;
         $this->model = $model;
         $this->color = $color;
-        $this->numberOfPlace = $numberOfPlace;
+        $this->numberOfPlaces = $numberOfPlaces;
+
+        array_push(self::$listOfCars, $this);
     }
 
     /*
@@ -62,17 +65,23 @@ class Car
         $this->color = $color;
     }
 
-    /*
-    *
-    */
-    public function getNumberOfPlace(){
-        return $this->numberofPlace;
+    /**
+     * Get the value of numberOfPlaces
+     */ 
+    public function getNumberOfPlaces()
+    {
+        return $this->numberOfPlaces;
     }
 
-    /*
-    *
-    */
-    public function setNumberOfPlace($numberofPlace){
-        $this->numberofPlace=$numberofPlace;
+    /**
+     * Set the value of numberOfPlaces
+     *
+     * @return  self
+     */ 
+    public function setNumberOfPlaces($numberOfPlaces)
+    {
+        $this->numberOfPlaces = $numberOfPlaces;
+
+        return $this;
     }
 }

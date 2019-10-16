@@ -14,9 +14,9 @@ class Announcement
     private $commentsFromAnnouncement;
     private $commentsFromUsers;
 
-    private __construct($cityStart = "Not Defined", $cityEnd = "Not Defined", $dateStart = "Not Defined", 
-        $dateEnd = "Not Defined", $userDriver = "Not Defined", $seatNumber = "Not Defined", $price = "Not Defined", $car = "Not Defined", 
-        $commentsFromAnnouncement = "None", $commentsFromUsers = "None"){
+    public function __construct($cityStart = "Pas définit", $cityEnd = "Pas définit", $dateStart = "Pas définit", 
+        $dateEnd = "Pas définit", $userDriver = "Pas définit", $seatNumber = "Pas définit", $price = "Pas définit", $car = "Pas définit", 
+        $commentsFromAnnouncement = "Aucun", $commentsFromUsers = "Aucun"){
         
         $this->cityStart = $cityStart;
         $this->cityEnd = $cityEnd;
@@ -29,6 +29,43 @@ class Announcement
 
         $this->commentsFromAnnouncement = $commentsFromAnnouncement;
         $this->commentsFromUsers = $commentsFromUsers;
+
+       // array_push(self::$listOfAnnoucement, $this);
+    }
+
+    public static function showUserForm() {
+        echo "<table id='users'>
+        <tr>
+          <th>Départ</th>
+          <th>Arrivée</th>
+          <th>Date de départ</th>
+          <th>Date d'arrivée</th>
+          <th>Nom du conducteur</th>
+          <th>Nombre de sièges</th>
+          <th>Prix</th>
+          <th>Voiture</th>
+        </tr>";
+        for ($i = 0; $i < count(User::$listOfUsers); $i++ ) {
+            echo "<tr>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getFirstName();
+                    // echo User::$listOfUsers[$i]->getAttributes()["firstName"];
+                echo "</td>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getLastName();
+                echo "</td>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getEmail();
+                echo "</td>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getBirthDate();
+                echo "</td>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getRate();
+                echo "</td>";
+            echo "</tr>";
+        }
+        echo "</table>"; 
     }
 
     /**

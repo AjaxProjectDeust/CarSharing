@@ -12,8 +12,8 @@ class User
     private $listOfCars;
     private $listOfComments;
 
-    public function __construct($firstName = "Not defined", $lastName = "Not defined", $email = "Not defined", 
-        $birthDate = "Not defined", $rate = "Aucune note", $listOfCars = "Pas de voiture", $listOfComments = "Pas de commentaire") {
+    public function __construct($firstName = "Pas définit", $lastName = "Pas définit", $email = "Pas définit", 
+        $birthDate = "Pas définit", $rate = "Aucune note", $listOfCars = "Pas de voiture", $listOfComments = "Pas de commentaire") {
 
             $this->firstName = $firstName;
             $this->lastName = $lastName;
@@ -33,6 +33,41 @@ class User
      */
     public function getAttributes() {
         return get_object_vars($this);
+    }
+
+    /**
+     * Affiche le tableau des
+     */
+    public static function showUserForm() {
+        echo "<table id='users'>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Mail</th>
+          <th>Date de naissance</th>
+          <th>Notes</th>
+        </tr>";
+        for ($i = 0; $i < count(User::$listOfUsers); $i++ ) {
+            echo "<tr>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getFirstName();
+                    // echo User::$listOfUsers[$i]->getAttributes()["firstName"];
+                echo "</td>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getLastName();
+                echo "</td>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getEmail();
+                echo "</td>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getBirthDate();
+                echo "</td>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getRate();
+                echo "</td>";
+            echo "</tr>";
+        }
+        echo "</table>"; 
     }
 
     /**
