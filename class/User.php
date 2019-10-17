@@ -12,20 +12,21 @@ class User
     private $listOfCars;
     private $listOfComments;
 
-    public function __construct($firstName = "Pas définit", $lastName = "Pas définit", $email = "Pas définit", 
-        $birthDate = "Pas définit", $rate = "Aucune note", $listOfCars = "Pas de voiture", $listOfComments = "Pas de commentaire") {
+    public function __construct($firstName = "Pas de prénom", $lastName = "Pas de nom", $email = "Pas de mail", 
+        $birthDate = "Aucune date de naissance", $rate = "Aucune note", $listOfCars = "Pas de voiture", $listOfComments = "Pas de commentaire") {
             
-            $this->firstName = $firstName;
-            $this->lastName = $lastName;
-            $this->email = $email;
-            $this->birthDate = $birthDate;
-            $this->rate = $rate;
-            $this->listOfCars = $listOfCars;
-            $this->listOfComments = $listOfComments;
-            
-            array_push(self::$listOfUsers, $this);
-            var_dump(self::$listOfUsers); 
-            // var_dump($this); 
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->email = $email;
+        $this->birthDate = $birthDate;
+        $this->rate = $rate;
+        $this->listOfCars = $listOfCars;
+        $this->listOfComments = $listOfComments;
+        
+        array_push(self::$listOfUsers, $this);
+        $_SESSION['listOfUsers'] = self::$listOfUsers;
+        // var_dump(self::$listOfUsers); 
+        // var_dump($this); 
     }
 
     /**
@@ -51,8 +52,7 @@ class User
             echo "<tr>";
                 echo "<td>";
                     $iLink = $i + 1;
-                    echo "<a href='users.php?user=$i'>" . User::$listOfUsers[$i]->getFirstName() . " " . User::$listOfUsers[$i]->getLastName() ."</a>";
-                    // echo User::$listOfUsers[$i]->getAttributes()["firstName"];
+                    echo "<a href='users.php?user=$iLink'>" . User::$listOfUsers[$i]->getFirstName() . " " . User::$listOfUsers[$i]->getLastName() ."</a>";
                 echo "</td>";
                 echo "<td>";
                     echo User::$listOfUsers[$i]->getEmail();

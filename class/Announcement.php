@@ -16,8 +16,8 @@ class Announcement
     private $commentsFromAnnouncement;
     private $commentsFromUsers;
 
-    public function __construct($cityStart = "Pas définit", $cityEnd = "Pas définit", $dateStart = "Pas définit", 
-        $dateEnd = "Pas définit", $userDriver = "Pas définit", $seatNumber = "Pas définit", $price = "Pas définit", $car = "Pas définit", 
+    public function __construct($cityStart = "Pas de ville de départ définie", $cityEnd = "Pas de ville de fin définie", $dateStart = "Pas de date de début", 
+        $dateEnd = "Pas de date de fin", $userDriver = "Pas de conducteur", $seatNumber = "Nombre de siège non définit", $price = "Pas définit", $car = "Voiture non définie", 
         $commentsFromAnnouncement = "Aucun", $commentsFromUsers = "Aucun"){
         
         $this->cityStart = $cityStart;
@@ -33,22 +33,26 @@ class Announcement
         $this->commentsFromUsers = $commentsFromUsers;
 
        array_push(self::$listOfAnnouncements, $this);
+       $_SESSION["listOfAnnouncements"] = self::$listOfAnnouncements;
     }
 
     public static function showAnnouncementTable() {
         echo "<table id='announcement'>
         <tr>
-          <th>Ville Départ</th>
-          <th>Ville Arrivée</th>
-          <th>Date de départ</th>
-          <th>Date d'arrivée</th>
-          <th>Nom du conducteur</th>
-          <th>Nombre de sièges</th>
-          <th>Prix</th>
-          <th>Marque de la Voiture</th>
+            <th>Nom du conducteur</th>
+            <th>Ville Départ</th>
+            <th>Ville Arrivée</th>
+            <th>Date de départ</th>
+            <th>Date d'arrivée</th>
+            <th>Nombre de sièges</th>
+            <th>Prix</th>
+            <th>Marque de la Voiture</th>
         </tr>";
         for ($i = 0; $i < count(Announcement::$listOfAnnouncements); $i++ ) {
             echo "<tr>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getFirstName(). " " . User::$listOfUsers[$i]->getLastName();
+                echo "</td>";
                 echo "<td>";
                 echo Announcement::$listOfAnnouncements[$i]->getCityStart();
                 // echo User::$listOfAnnouncements[$i]->getAttributes()["firstName"];
@@ -61,11 +65,6 @@ class Announcement
                 echo "</td>";
                 echo "<td>";
                     echo Announcement::$listOfAnnouncements[$i]->getDateEnd();
-                echo "</td>";
-                echo "<td>";
-                    echo User::$listOfUsers[$i]->getFirstName();
-                echo " ";
-                    echo User::$listOfUsers[$i]->getLastName();
                 echo "</td>";
                 echo "<td>";
                     echo Announcement::$listOfAnnouncements[$i]->getSeatNumber();

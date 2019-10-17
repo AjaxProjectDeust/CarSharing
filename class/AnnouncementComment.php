@@ -7,7 +7,7 @@ class AnnouncementComment
     private $date;
     private $userassociat;
 
-    public function __construct($text = "Not defined", $authoruser = "Not defined", $date = "Not defined", $userassociat = "Not defined")
+    public function __construct($text = "Non définit", $authoruser = "Non définit", $date = "Non définit", $userassociat = "Non définit")
     {
 
         $this->text = $text;

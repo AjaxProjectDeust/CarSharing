@@ -1,12 +1,19 @@
-table, td, th {
-    border: 1px solid black;
-    margin: 0 auto;
+:root {
+    /*usage => color: var(--nomVar); */
+    --listOfUsers-head-table: #4CAF50;
+    --listOfAnnouncements-head-table: rgb(48, 216, 228);
 }
 
-#users {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%
+/* Page Index */
+table, td, th {
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+#users, #announcement {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 #users tr:nth-child(even){background-color: #f2f2f2;}
@@ -16,23 +23,25 @@ table, td, th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #4CAF50;
+  background-color: var(--listOfUsers-head-table);
   color: white;
-}
-
-#announcement {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
 }
 
 #announcement tr:nth-child(even){background-color: #f2f2f2;}
 #announcement tr:hover {background-color: #ddd;}
 
 #announcement th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: rgb(48, 216, 228);
-  color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: var(--listOfAnnouncements-head-table);
+    color: black;
+}
+
+/* Page Utilisateurs */
+#userRender-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }

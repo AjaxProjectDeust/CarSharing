@@ -7,18 +7,18 @@ class Car
     private $mark;
     private $model;
     private $color;
-    private $numberOfPlaces;
+    private $numberOfSeats;
 
     /**
      * 
      */
-    public function __construct($mark = "Pas définit", $model = "Pas définit", 
-        $color = "Pas définit", $numberOfPlaces = "Pas définit") {
+    public function __construct($mark = "Non définit", $model = "Non définit", 
+        $color = "Non définit", $numberOfSeats = "Non définit") {
 
         $this->mark = $mark;
         $this->model = $model;
         $this->color = $color;
-        $this->numberOfPlaces = $numberOfPlaces;
+        $this->numberOfSeats = $numberOfSeats;
 
         array_push(self::$listOfCars, $this);
     }
@@ -66,21 +66,21 @@ class Car
     }
 
     /**
-     * Get the value of numberOfPlaces
+     * Get the value of numberOfSeats
      */ 
     public function getNumberOfPlaces()
     {
-        return $this->numberOfPlaces;
+        return $this->numberOfSeats;
     }
 
     /**
-     * Set the value of numberOfPlaces
+     * Set the value of numberOfSeats
      *
      * @return  self
      */ 
-    public function setNumberOfPlaces($numberOfPlaces)
+    public function setNumberOfPlaces($numberOfSeats)
     {
-        $this->numberOfPlaces = $numberOfPlaces;
+        $this->numberOfSeats = $numberOfSeats;
 
         return $this;
     }

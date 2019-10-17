@@ -5,11 +5,12 @@ class Comments
     private $text;
     private $user;
     private $date;
-
-    public function __construct($text = "Not Filled", $user = null, $date = date('m/d/Y h:i:s a', time())){
+    
+    // public function __construct($text = "Not Filled", $user = null, $date = date('m\d\Y h:i:s a'), $time = time() ) {
+    public function __construct($text = "Nom définit", $user = "Nom définit") {
         $this->text = $text;
         $this->user = $user;
-        $this->date = $date;
+        $this->date = date("d/m/Y H:i:s");
     }
 
     /**
@@ -28,7 +29,6 @@ class Comments
     public function setText($text)
     {
         $this->text = $text;
-
         return $this;
     }
 
@@ -48,7 +48,6 @@ class Comments
     public function setUser($user)
     {
         $this->user = $user;
-
         return $this;
     }
 
@@ -68,7 +67,6 @@ class Comments
     public function setDate($date)
     {
         $this->date = $date;
-
         return $this;
     }
 }

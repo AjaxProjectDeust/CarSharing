@@ -41,18 +41,19 @@ Soignez et commentez votre code
 Répartissez vous équitablement le travail
 Codez en orienté objet, comme vu dans la classe virtuelle de la semaine dernière
 
-Vous devrez réaliser cette partie et poster votre projet dans l'espace de dépôt de fichiers (voir bas de page) avant le mercredi 16 octobre au soir.
-
 ## Partie 2  
-Pour cette deuxième et dernière partie du projet, vous implémenterez en PHP orienté objet le système composé des éléments suivants :
-A venir
+Pour cette deuxième et dernière partie du projet, vous devez connecter votre projet issue de la partie 1 à une base de donnée, c’est à dire :
 
-Votre page d'accueil devra présenter les fonctionnalités suivantes :
-A venir
+- Créez un formulaire permettant d'insérer un utilisateur en base de donnée.  
+- Créez un formulaire permettant d'insérer une voiture en base de donnée.  
+- Créez un formulaire permettant d'insérer une annonce en base de donnée.  
+- Créez un formulaire permettant d'insérer un commentaire d’annonce en base de donnée.  
+- Créez un formulaire permettant d'insérer un commentaire d’utilisateur en base de donnée.  
+- Créez un formulaire permettant d'insérer une réservation en base de donnée.  
+- Vos tableaux créés dans la partie 1 (liste des utilisateurs et liste des annonces)   ainsi que la page d’un utilisateur et la page d’une annonce, devront récupérer leurs données à partir de la base de donnée.
 
 Règles à respecter :
-A venir
-
+Les règles sont les même que pour la partie 1.  
 Vous devrez déposer dans l'espace de dépôts de fichiers avant le dimanche 20 octobre au soir une archive ZIP contenant vos fichiers PHP, un dump de votre base de donnée  (export au format .sql)ainsi qu'un mémoire en PDF de 20 pages contenant les éléments suivants :
 
 - Votre mode d'organisation, comment vous vous êtes répartis les tâches, les moyens de communication utilisés entre vous, etc

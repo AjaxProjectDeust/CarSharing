@@ -1,16 +1,18 @@
 <?php
 
 class Reservation {
-    private $texte;
     private $date;
-    private $hour;
+    private $user;
+    private $announce;
     private $status;
 
-    private __construct($texte = "None", $date = "Not defined", $hour = "Not Defined", $status = "Not Defined"){
-        $this->texte = $texte;
+    public function __construct($date = "Aucune date", $user = "Pas d'utilisateur", 
+        $announce = "Pas d'annonce", $status = "Pas de statut") {
+            
         $this->date = $date;
-        $this->hour = $hour
-        $this->status = $status
+        $this->user = $user;
+        $this->announce = $announce;
+        $this->status = $status;
     }
 
     /**
