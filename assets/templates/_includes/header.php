@@ -18,4 +18,12 @@ error_reporting(E_ALL);
     <link rel="stylesheet" href="../assets/css/main.css">
     <title>CarSharing</title>
 </head>
+<header>
+    <ul>
+        <li><a class="active" href="index.php">Accueil</a></li>
+        <li><a href="ajoutUtilisateur.php">Ajout utilisateurs</a></li>
+        <li><a href="ajoutVoiture.php">Ajout voitures</a></li>
+        <li><a href="ajoutAnnonce.php">Ajout annonces</a></li>
+    </ul>
+</header>
 <body>

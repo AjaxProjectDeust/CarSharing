@@ -11,20 +11,22 @@ class User
     private $rate;
     private $listOfCars;
     private $listOfComments;
-
+    
     public function __construct($firstName = "Pas de prénom", $lastName = "Pas de nom", $email = "Pas de mail", 
-        $birthDate = "Aucune date de naissance", $rate = "Aucune note", $listOfCars = "Pas de voiture", $listOfComments = "Pas de commentaire") {
+        $birthDate = "Aucune date de naissance", $rate = "Aucune note", $listOfCars = "Pas de voitures", $listOfComments = "Pas de commentaires") {
             
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
         $this->birthDate = $birthDate;
-        $this->rate = $rate;
+
+        (!isset($rate) ? $this->rate = "Aucune note" : $this->rate = $rate );
         $this->listOfCars = $listOfCars;
         $this->listOfComments = $listOfComments;
         
         array_push(self::$listOfUsers, $this);
         $_SESSION['listOfUsers'] = self::$listOfUsers;
+
         // var_dump(self::$listOfUsers); 
         // var_dump($this); 
     }
@@ -43,16 +45,22 @@ class User
     public static function showUserTable() {
         echo "<table id='users'>
         <tr>
+          <th></th>
           <th>Utilisateur</th>
           <th>Mail</th>
           <th>Date de naissance</th>
-          <th>Notes</th>
+          <th>Note</th>
+          <th>Voitures</th>
+          <th>Commentaires</th>
         </tr>";
         for ($i = 0; $i < count(User::$listOfUsers); $i++ ) {
             echo "<tr>";
                 echo "<td>";
                     $iLink = $i + 1;
-                    echo "<a href='users.php?user=$iLink'>" . User::$listOfUsers[$i]->getFirstName() . " " . User::$listOfUsers[$i]->getLastName() ."</a>";
+                    echo "<a href='users.php?user=$iLink'>Voir</a>";
+                echo "</td>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getFirstName() . " " . User::$listOfUsers[$i]->getLastName();
                 echo "</td>";
                 echo "<td>";
                     echo User::$listOfUsers[$i]->getEmail();
@@ -63,9 +71,15 @@ class User
                 echo "<td>";
                     echo User::$listOfUsers[$i]->getRate();
                 echo "</td>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getListOfCars();
+                echo "</td>";
+                echo "<td>";
+                    echo User::$listOfUsers[$i]->getListOfComments();
+                echo "</td>";
             echo "</tr>";
         }
-        echo "</table>"; 
+        echo "</table>";
     }
 
     /**

@@ -39,6 +39,7 @@ class Announcement
     public static function showAnnouncementTable() {
         echo "<table id='announcement'>
         <tr>
+            <th></th>
             <th>Nom du conducteur</th>
             <th>Ville Départ</th>
             <th>Ville Arrivée</th>
@@ -51,10 +52,13 @@ class Announcement
         for ($i = 0; $i < count(Announcement::$listOfAnnouncements); $i++ ) {
             echo "<tr>";
                 echo "<td>";
+                    echo "<a href='announce.php'>Voir</a>";
+                echo "</td>";
+                echo "<td>";
                     echo User::$listOfUsers[$i]->getFirstName(). " " . User::$listOfUsers[$i]->getLastName();
                 echo "</td>";
                 echo "<td>";
-                echo Announcement::$listOfAnnouncements[$i]->getCityStart();
+                    echo Announcement::$listOfAnnouncements[$i]->getCityStart();
                 // echo User::$listOfAnnouncements[$i]->getAttributes()["firstName"];
                 echo "</td>";
                 echo "<td>";
@@ -73,13 +77,7 @@ class Announcement
                     echo Announcement::$listOfAnnouncements[$i]->getPrice();
                 echo "</td>";
                 echo "<td>";
-                    // TODO Recup' la marque de la voiture utilisé
-                    // echo Car::$listOfCars[$i]->getMark();
                     echo Announcement::$listOfAnnouncements[$i]->getMark();
-                    
-                    // var_dump(Announcement::$listOfAnnouncements[$i]);
-                    //echo Car::$listOfCars[$i]->getMark();
-                    // echo Car::$car[$i]->getMark();
                 echo "</td>";
             echo "</tr>";
         }

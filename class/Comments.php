@@ -6,7 +6,6 @@ class Comments
     private $user;
     private $date;
     
-    // public function __construct($text = "Not Filled", $user = null, $date = date('m\d\Y h:i:s a'), $time = time() ) {
     public function __construct($text = "Nom définit", $user = "Nom définit") {
         $this->text = $text;
         $this->user = $user;

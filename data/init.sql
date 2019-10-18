@@ -4,8 +4,8 @@ use covoiturage_like;
 
 CREATE TABLE users (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    firstname VARCHAR(30) NOT NULL,
-    lastname VARCHAR(30) NOT NULL,
+    firstName VARCHAR(30) NOT NULL,
+    lastName VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL,
     birthDate DATE NOT NULL,
     rate VARCHAR(1) NOT NULL,
