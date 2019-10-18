@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS covoiturage_like;
-CREATE DATABASE covoiturage_like DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-use covoiturage_like;
+DROP DATABASE IF EXISTS CarSharing;
+CREATE DATABASE CarSharing DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+use CarSharing;
 
 CREATE TABLE users (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -8,7 +8,7 @@ CREATE TABLE users (
     lastName VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL,
     birthDate DATE NOT NULL,
-    rate VARCHAR(1) NOT NULL,
+    rate INT(1) NOT NULL,
     listOfCars TEXT NOT NULL,
     listOfUsers TEXT NOT NULL,
     date TIMESTAMP
@@ -29,8 +29,8 @@ CREATE TABLE announcements (
     dateStart VARCHAR(30) NOT NULL,
     dateEnd VARCHAR(30) NOT NULL,
     userDriver VARCHAR(30) NOT NULL,
-    seatNumber VARCHAR(30) NOT NULL,
-    price VARCHAR(30) NOT NULL,
+    seatNumber INT(1) NOT NULL,
+    price FLOAT(10) NOT NULL,
     car VARCHAR(30) NOT NULL
 );
 
@@ -55,5 +55,7 @@ CREATE TABLE reservations (
     date DATE,
     user VARCHAR(30) NOT NULL,
     announce VARCHAR(30) NOT NULL,
-    status VARCHAR(30) NOT NULL
+    status BOOLEAN NOT NULL
 );
+
+/* INSERT INTO [users] (id,firstName,lastName,email,birthDate,rate,listOfCars,listOfUsers) VALUES (?, firstName, lastName, email, birthDate, rate, listOfCars, listOfUsers); */

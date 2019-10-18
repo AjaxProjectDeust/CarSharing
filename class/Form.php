@@ -3,3 +3,12 @@
     <p>Votre âge : <input type="text" name="age" /></p>
     <p><input type="submit" value="OK"></p>
 </form>
+
+
+<?php
+if(isset($_POST['OK']))
+{
+    $result=mysqli_query($con, "   
+
+    ");
+}
