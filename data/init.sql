@@ -10,9 +10,9 @@ CREATE TABLE users (
     email VARCHAR(30) NOT NULL,
     birthDate DATE NOT NULL,
     rate INT(1) NULL,
-    listOfCars TEXT NULL,
-    listOfUsers TEXT NULL,
-    date DATE NULL
+    listOfCars TEXT NOT NULL,
+    listOfComments TEXT NOT NULL,
+    date DATE NOT NULL
 ); 
 
 CREATE TABLE cars (
@@ -59,4 +59,6 @@ CREATE TABLE reservations (
     status BOOLEAN NOT NULL
 );
 
-/* INSERT INTO [users] (id,firstName,lastName,email,birthDate,rate,listOfCars,listOfUsers) VALUES (?, firstName, lastName, email, birthDate, rate, listOfCars, listOfUsers); */
+INSERT INTO `users` (`firstName`, `lastName`, `email`, `birthDate`, `rate`, `listOfCars`, `listOfComments`, `date`) VALUES ('Tony', 'Bengué', 'tonybengue@hotmail.fr', '1993-12-02', NULL, "Aucune Voiture", "Aucun commentaire", now());
+INSERT INTO `users` (`firstName`, `lastName`, `email`, `birthDate`, `rate`, `listOfCars`, `listOfComments`, `date`) VALUES ('Alméric', 'Steichen', 'almeric.steichen@etu.unilim.fr', '1998-02-12', NULL, "Aucune Voiture", "Aucun commentaire", now());
+-- INSERT INTO `users` (`firstName`, `lastName`, `email`, `birthDate`, `rate`, `listOfCars`, `listOfComments`, `date`) VALUES ('Jean', 'Valjean', 'jean.valjean@etu.unilim.fr', '2015-02-12', NULL, NULL, NULL, now());

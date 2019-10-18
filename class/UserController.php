@@ -2,7 +2,7 @@
 
 class UserController
 {
-    public function userAction(): string {
+    public function userForm(): string {
         $html = '';
         $html .= '
             <h2>Création d\'un utilisteur</h2>
@@ -22,21 +22,10 @@ class UserController
                 <input type="submit" value="Création">
                 </form>
                 <br />';
-        // <input type="hidden" name="type" value="userCreation">
 
         $this->UserCreation();
 
         return $html;
-
-        // $animals = $animalService->getAnimals();
-        // foreach ($animals as $animal) {
-        //     $html .= $animal->getName();
-        //     $html .= '<br />';
-        //     $html .= $animal->getAge() . ' day' . ($animal->getAge() > 1 ? 's' : '');
-        //     $html .= '<br />';
-        //     $html .= ($animal->isGreaterThanAHuman() ? 'Is greater than a human' : 'Is smaller than a human');
-        //     $html .= '<br />';
-        // }
     }
 
     private function userCreation() {

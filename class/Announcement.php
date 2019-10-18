@@ -36,6 +36,15 @@ class Announcement
        $_SESSION["listOfAnnouncements"] = self::$listOfAnnouncements;
     }
 
+
+    /**
+     * Retourne un tableau de tous les attributs de l'objet
+     * @return array
+     */
+    public function getAttributes() {
+        return get_object_vars($this);
+    }
+
     public static function showAnnouncementTable() {
         echo "<table id='announcement'>
         <tr>
@@ -52,7 +61,8 @@ class Announcement
         for ($i = 0; $i < count(Announcement::$listOfAnnouncements); $i++ ) {
             echo "<tr>";
                 echo "<td>";
-                    echo "<a href='announce.php'>Voir</a>";
+                    $iLink = $i + 1;
+                    echo "<a href='announce.php?announce=$iLink'>Voir</a>";
                 echo "</td>";
                 echo "<td>";
                     echo User::$listOfUsers[$i]->getFirstName(). " " . User::$listOfUsers[$i]->getLastName();
