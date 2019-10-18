@@ -7,12 +7,12 @@ class UserController
         $html .= '
             <h2>Création d\'un utilisteur</h2>
             <form method="post" action="#">
+                <label for="firstName">Prénom  : </label>
+                <input type="text" name="firstName"><br>
+                
                 <label for="lastName">Nom  : </label>
                 <input type="text" name="lastName"><br>
                 
-                <label for="firstName">Prénom  : </label>
-                <input type="text" name="firstName"><br>
-
                 <label for="email">E-Mail  : </label>
                 <input type="text" name="email"><br>
 
@@ -21,8 +21,7 @@ class UserController
 
                 <input type="submit" value="Création">
                 </form>
-                <br />
-                ';
+                <br />';
         // <input type="hidden" name="type" value="userCreation">
 
         $this->UserCreation();

@@ -4,11 +4,10 @@ class UserModel {
 
     public function insertUser($firstName, $lastName, $email, $birthDate) {
         $pdo = new Database();
+        $pdo = $pdo->getPdo();
 
-        var_dump($pdo);
-        
         $formValues = [
-            "firstname" => $firstName, 
+            "firstName" => $firstName, 
             "lastName" => $lastName, 
             "email" => $email , 
             "birthDate" => $birthDate, 
@@ -18,7 +17,8 @@ class UserModel {
             VALUES(:firstName, :lastName, :email , :birthDate)";
        
         $request = $pdo->prepare($sql);
-        
         $request->execute($formValues); 
+
+
     }
 }

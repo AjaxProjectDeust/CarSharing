@@ -1,5 +1,6 @@
 DROP DATABASE IF EXISTS CarSharing;
-CREATE DATABASE CarSharing DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+-- CREATE DATABASE CarSharing DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE CarSharing DEFAULT CHARACTER SET utf8mb4;
 use CarSharing;
 
 CREATE TABLE users (
@@ -8,10 +9,10 @@ CREATE TABLE users (
     lastName VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL,
     birthDate DATE NOT NULL,
-    rate INT(1) NOT NULL,
-    listOfCars TEXT NOT NULL,
-    listOfUsers TEXT NOT NULL,
-    date TIMESTAMP
+    rate INT(1) NULL,
+    listOfCars TEXT NULL,
+    listOfUsers TEXT NULL,
+    date DATE NULL
 ); 
 
 CREATE TABLE cars (
