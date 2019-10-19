@@ -1,6 +1,6 @@
 <?php
 
-class UserModel {
+class AnnouncementModel {
 
     public function insertUser($firstName, $lastName, $email, $birthDate) {
         $pdo = new Database();
@@ -37,11 +37,11 @@ class UserModel {
         }
     }
 
-    public function getUsers() {
+    public function getAnnouncements() {
         $pdo = new Database();
         $pdo = $pdo->getPdo();
 
-        $sql = "SELECT * FROM users";
+        $sql = "SELECT * FROM announcements";
         $request = $pdo->prepare($sql);
         $request->execute();
 

@@ -70,9 +70,11 @@ table, td, th {
 }
 
 /* Page Utilisateurs */
-#userRender-container {
+.individual {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    border: black 1px dashed;
 }

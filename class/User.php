@@ -19,11 +19,11 @@ class User
         $this->lastName = $lastName;
         $this->email = $email;
         $this->birthDate = $birthDate;
-
         (!isset($rate) ? $this->rate = "Aucune note" : $this->rate = $rate );
         $this->listOfCars = $listOfCars;
         $this->listOfComments = $listOfComments;
-        
+
+        // Stocke l'utilisateur crée
         array_push(self::$listOfUsers, $this);
         $_SESSION['listOfUsers'] = self::$listOfUsers;
     }
@@ -34,106 +34,6 @@ class User
      */
     public function getAttributes() {
         return get_object_vars($this);
-    }
-
-    /**
-     * Affiche le tableau des utilisateurs
-     */
-    public static function showUserTable() {
-        echo "<table id='users'>
-        <tr>
-          <th></th>
-          <th>Utilisateur</th>
-          <th>Mail</th>
-          <th>Date de naissance</th>
-          <th>Note</th>
-          <th>Voitures</th>
-          <th>Commentaires</th>
-        </tr>";
-        for ($i = 0; $i < count(User::$listOfUsers); $i++ ) {
-            echo "<tr>";
-                echo "<td>";
-                    $iLink = $i + 1;
-                    echo "<a href='users.php?user=$iLink'>Voir</a>";
-                echo "</td>";
-                echo "<td>";
-                    echo User::$listOfUsers[$i]->getFirstName() . " " . User::$listOfUsers[$i]->getLastName();
-                echo "</td>";
-                echo "<td>";
-                    echo User::$listOfUsers[$i]->getEmail();
-                echo "</td>";
-                echo "<td>";
-                    echo User::$listOfUsers[$i]->getBirthDate();
-                echo "</td>";
-                echo "<td>";
-                    echo User::$listOfUsers[$i]->getRate();
-                echo "</td>";
-                echo "<td>";
-                    echo User::$listOfUsers[$i]->getListOfCars();
-                echo "</td>";
-                echo "<td>";
-                    echo User::$listOfUsers[$i]->getListOfComments();
-                echo "</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-    }
-
-   /**
-    * Affiche les utilisateurs depuis la base
-    */
-    public static function showUserTableFromDb() {
-        $model = new UserModel();
-        $users = $model->getUsers();
-
-        var_dump($users);
-
-        echo "<table id='users'>
-        <tr>
-          <th></th>
-          <th>Utilisateur</th>
-          <th>Date de création</th>
-          <th>Mail</th>
-          <th>Date de naissance</th>
-          <th>Note</th>
-          <th>Voitures</th>
-          <th>Commentaires</th>
-        </tr>";
-        for ($i = 0; $i < count($users); $i++ ) {
-            $user = $users[$i];
-            array_push(self::$listOfUsers, $user);
-
-            echo "<tr>";
-                echo "<td>";
-                    $iLink = $i + 1;
-                    echo "<a href='users.php?user=$iLink'>Voir</a>";
-                echo "</td>";
-                echo "<td>";
-                    echo $user['firstName'] . " " . $user['lastName'];
-                echo "</td>";
-                echo "<td>";
-                    echo $user['date'];
-                echo "</td>";
-                echo "<td>";
-                    echo $user['email'];
-                echo "</td>";
-                echo "<td>";
-                    echo $user['birthDate'];
-                echo "</td>";
-                echo "<td>";
-                    echo $user['rate'];
-                echo "</td>";
-                echo "<td>";
-                    echo $user['listOfCars'];
-                echo "</td>";
-                echo "<td>";
-                    echo $user['listOfComments'];
-                echo "</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-
-        $_SESSION['listOfUsers'] = self::$listOfUsers;
     }
 
     /**

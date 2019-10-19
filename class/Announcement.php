@@ -36,62 +36,12 @@ class Announcement
        $_SESSION["listOfAnnouncements"] = self::$listOfAnnouncements;
     }
 
-
     /**
      * Retourne un tableau de tous les attributs de l'objet
      * @return array
      */
     public function getAttributes() {
         return get_object_vars($this);
-    }
-
-    public static function showAnnouncementTable() {
-        echo "<table id='announcement'>
-        <tr>
-            <th></th>
-            <th>Nom du conducteur</th>
-            <th>Ville Départ</th>
-            <th>Ville Arrivée</th>
-            <th>Date de départ</th>
-            <th>Date d'arrivée</th>
-            <th>Nombre de sièges</th>
-            <th>Prix</th>
-            <th>Marque de la Voiture</th>
-        </tr>";
-        for ($i = 0; $i < count(Announcement::$listOfAnnouncements); $i++ ) {
-            echo "<tr>";
-                echo "<td>";
-                    $iLink = $i + 1;
-                    echo "<a href='announce.php?announce=$iLink'>Voir</a>";
-                echo "</td>";
-                echo "<td>";
-                    echo User::$listOfUsers[$i]->getFirstName(). " " . User::$listOfUsers[$i]->getLastName();
-                echo "</td>";
-                echo "<td>";
-                    echo Announcement::$listOfAnnouncements[$i]->getCityStart();
-                // echo User::$listOfAnnouncements[$i]->getAttributes()["firstName"];
-                echo "</td>";
-                echo "<td>";
-                    echo Announcement::$listOfAnnouncements[$i]->getCityEnd();
-                echo "</td>";
-                echo "<td>";
-                    echo Announcement::$listOfAnnouncements[$i]->getDateStart();
-                echo "</td>";
-                echo "<td>";
-                    echo Announcement::$listOfAnnouncements[$i]->getDateEnd();
-                echo "</td>";
-                echo "<td>";
-                    echo Announcement::$listOfAnnouncements[$i]->getSeatNumber();
-                echo "</td>";
-                echo "<td>";
-                    echo Announcement::$listOfAnnouncements[$i]->getPrice();
-                echo "</td>";
-                echo "<td>";
-                    echo Announcement::$listOfAnnouncements[$i]->getMark();
-                echo "</td>";
-            echo "</tr>";
-        }
-        echo "</table>"; 
     }
 
     /**

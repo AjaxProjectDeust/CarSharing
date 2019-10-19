@@ -24,6 +24,7 @@ error_reporting(E_ALL);
         <li><a href="ajoutUtilisateur.php">Ajout utilisateurs</a></li>
         <li><a href="ajoutVoiture.php">Ajout voitures</a></li>
         <li><a href="ajoutAnnonce.php">Ajout annonces</a></li>
+        <li><a href="ajoutReservation.php">Ajout annonces</a></li>
     </ul>
 </header>
 <body>
