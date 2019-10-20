@@ -44,15 +44,22 @@ class AnnouncementController
         $model = new AnnouncementModel();
 
         // var_dump($_POST);
-        if (isset($_POST['lastName']) && isset($_POST['firstName']) && 
-            isset($_POST['email']) && isset($_POST['birthDate'])) {
+        if (isset($_POST['userDriver']) && isset($_POST['cityStart']) && isset($_POST['cityEnd']) && 
+            isset($_POST['dateStart']) && isset($_POST['cityEnd']) && 
+            isset($_POST['dateStart']) && isset($_POST['dateEnd']) &&
+            isset($_POST['car']) && isset($_POST['seatNumber']) &&
+            isset($_POST['price'])) {
 
-            $lastName = $_POST['lastName'];
-            $firstName = $_POST['firstName'];
-            $email = $_POST['email'];
-            $birthDate = $_POST['birthDate'];
+                $userDriver = $_POST['userDriver'];
+                $cityStart = $_POST['cityStart'];
+                $cityEnd = $_POST['cityEnd'];
+                $dateStart = $_POST['dateStart'];
+                $dateEnd = $_POST['dateEnd'];
+                $car = $_POST['car'];
+                $seatNumber = $_POST['seatNumber'];
+                $price = $_POST['price'];
 
-            $isOk = $model->insertUser($lastName, $firstName, $email, $birthDate);
+            $isOk = $model->insertAnnouncement($userDriver, $cityStart, $cityEnd, $dateStart, $dateEnd, $car,$seatNumber, $price);
         }
     }
 
