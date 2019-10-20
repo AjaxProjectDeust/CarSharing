@@ -1,6 +1,6 @@
 <?php
 require_once("../assets/templates/_includes/header.php");
 
-$controller = new AnnouncementController();
-$html = $controller->announcementForm();
+$controller = new ReservationController();
+$html = $controller->reservationForm();
 echo $html;

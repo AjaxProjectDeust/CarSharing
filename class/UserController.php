@@ -110,8 +110,6 @@ class UserController
             $user = $users[$i];
             array_push(User::$listOfUsers, $user);
 
-            $_SESSION['listOfUsers'] = User::$listOfUsers;
-
             echo "<tr>";
                 echo "<td>";
                     $iLink = $i + 1;
@@ -140,6 +138,8 @@ class UserController
                 echo "</td>";
             echo "</tr>";
         }
+        $_SESSION['listOfUsers'] = User::$listOfUsers;
+
         echo "</table>";
     }
 }

@@ -23,7 +23,19 @@ echo "<div class='individual'>";
     // foreach() {
 
     // }
-    echo "<a href=''>Réservations</a>";
+    echo "<th>
+            <td>Réservation :</td>
+        </th>
+        <tr>
+            <td>ddd<td>
+            <td>ddd<td>
+        </tr>
+<br>
+    <a href=''>Réservations</a>";
+    echo "<br>";
+    echo "<br>";
+    echo "<button><a href='index.php'>Retour</a></button>";
 echo "</div>";
+
 
 require_once("../assets/templates/_includes/footer.php");

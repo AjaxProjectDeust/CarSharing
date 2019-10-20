@@ -15,6 +15,13 @@ if(isset($_SESSION["announcementOk"])) {
      $_SESSION["announcementOk"] = null;
  }
 
+if(isset($_SESSION["reservationOk"])) {
+    echo $_SESSION["reservationOk"];
+    unset($_SESSION['reservationOk']);
+ } else {
+     $_SESSION["announcementOk"] = null;
+ }
+
 // Prénom, nom, mail, dateNaissance, voiture, commentaire
 // $user1 = new User("Tony", "Bengué", "tonybengue@hotmail.fr", "02/12/1993");
 // $user2 = new User("Almeric", "Steichen", "almeric.steichen@etu.unilim.fr", "08/08/1999");

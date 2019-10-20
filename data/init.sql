@@ -17,11 +17,11 @@ CREATE TABLE users (
 
 CREATE TABLE cars (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    userProperty VARCHAR(30) NOT NULL,
     mark VARCHAR(30) NOT NULL,
     model VARCHAR(30) NOT NULL,
     color VARCHAR(30) NOT NULL,
-    nbOfSeats VARCHAR(30) NOT NULL
-    
+    nbOfSeats TINYINT NOT NULL
 );
 
 CREATE TABLE announcements (
@@ -55,10 +55,10 @@ CREATE TABLE userAnnouncements (
 
 CREATE TABLE reservations (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    date DATE,
+    date DATE NOT NULL,
     user VARCHAR(30) NOT NULL,
     announce VARCHAR(30) NOT NULL,
-    status BOOLEAN NOT NULL
+    status TINYINT NOT NULL
 );
 
 INSERT INTO `users` (`firstName`, `lastName`, `email`, `birthDate`, `rate`, `listOfCars`, `listOfComments`, `date`)

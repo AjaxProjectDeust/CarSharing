@@ -1,6 +1,6 @@
 <?php
 require_once("../assets/templates/_includes/header.php");
 
-$controller = new UserController();
-$html = $controller->userForm();
+$controller = new carController();
+$html = $controller->carForm();
 echo $html;

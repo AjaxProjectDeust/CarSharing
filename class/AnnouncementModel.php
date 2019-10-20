@@ -6,8 +6,6 @@ class AnnouncementModel {
         $pdo = new Database();
         $pdo = $pdo->getPdo();
 
-        var_dump($userDriver);
-
         // Pour pouvoir insérer dans la bdd
         $dateStart = date('Y-m-d', strtotime($dateStart));
         $dateEnd = date('Y-m-d', strtotime($dateEnd));
@@ -31,18 +29,17 @@ class AnnouncementModel {
         if ($request) {
             $request->execute($formValues);
 
+            // Message flash
             $_SESSION["announcementOk"] = "Annonce insérée";
 
             header('Location: index.php');
             exit();
-        } else {
-            $_SESSION["notOk"] = "Error ". $sql;
-
-            header('Location: announce.php');
-            exit();
         }
     }
 
+    /**
+     * 
+     */
     public function getAnnouncements() {
         $pdo = new Database();
         $pdo = $pdo->getPdo();

@@ -17,18 +17,18 @@ Vous implémenterez en PHP orienté objet le système composé des éléments su
 **Commentaire d'annonce** : un texte, un utilisateur auteur, une date, une annonce associé.  
 **Réservation** : une date, un utilisateur, une annonce, un status.  
 
-Vous créerez des données de tests (utilisateurs, voiture, annonces, etc.) permettant à votre page d'accueil d'afficher quelques données.  
+Vous créerez des données de tests (utilisateurs, voiture, annonces...) permettant à votre page d'accueil d'afficher quelques données.  
 Votre page d'accueil devra présenter les fonctionnalités suivantes :
 
 - [x] Un tableau listant tous les utilisateurs existants et leurs attributs essentiels
 On peut cliquer sur un utilisateur et accéder à une page affichant tous ses attributs.  
     Sur la page d'un utilisateur:  
-    On peut cliquer sur une de ses réservations pour accéder à une page affichant tous les attributs de cette réservation.  
+    - [] On peut cliquer sur une de ses réservations pour accéder à une page affichant tous les attributs de cette réservation.  
 
 - [x] Un tableau listant toutes les annonces et ses attributs essentiels
 On peut cliquer sur une annonce et accéder à une page affichant tous ses attributs
     Sur la page d'une annonce:  
-    On peut cliquer sur l'auteur pour accéder à la page affichant tous les attributs de cet utilisateur.  
+    - [] On peut cliquer sur l'auteur pour accéder à la page affichant tous les attributs de cet utilisateur.  
 
 L'affichage d'un commentaire permet de cliquer sur l'auteur de ce commentaire et d'accéder à la page affichant tous les attributs de cet utilisateur
 
@@ -43,13 +43,13 @@ Codez en orienté objet, comme vu dans la classe virtuelle de la semaine derniè
 Pour cette deuxième et dernière partie du projet, vous devez connecter votre projet issue de la partie 1 à une base de donnée, c’est à dire :
 
 - [x] Créez un formulaire permettant d'insérer un utilisateur en base de donnée.  
-- [x] Créez un formulaire permettant d'insérer une voiture en base de donnée.  
-- [x] Créez un formulaire permettant d'insérer un commentaire d’annonce en base de donnée.  
-- [x] Créez un formulaire permettant d'insérer un commentaire d’utilisateur en base de donnée.   
 - [x] Créez un formulaire permettant d'insérer une annonce en base de donnée.  
 - [x] Créez un formulaire permettant d'insérer une réservation en base de donnée.  
+- [x] Créez un formulaire permettant d'insérer une voiture en base de donnée.  
+- [] Créez un formulaire permettant d'insérer un commentaire d’annonce en base de donnée.  
+- [] Créez un formulaire permettant d'insérer un commentaire d’utilisateur en base de donnée. 
 
-Vos tableaux créés dans la partie 1 (liste des utilisateurs et liste des annonces)   ainsi que la page d’un utilisateur et la page d’une annonce, devront récupérer leurs données à partir de la base de donnée.
+Vos tableaux créés dans la partie 1 (liste des utilisateurs et liste des annonces) ainsi que la page d’un utilisateur et la page d’une annonce, devront récupérer leurs données à partir de la base de donnée.
 
 Règles à respecter :
 Les règles sont les même que pour la partie 1.  
